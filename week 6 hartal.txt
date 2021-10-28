@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int t;cin>>t;
+    while(t--)
+    {
+        int n;cin>>n;
+        vector<int> ans(n+1);
+        int p;cin>>p;
+        vector<int> v(p);
+        for(int i=0;i<p;i++) cin>>v[i];
+        for(int i=0;i<p;i++)
+        {
+            for(int j=v[i];j<=n;j=j+v[i])
+            {
+                ans[j]=1;
+            }
+        }
+        int count=0;
+        for(int i=1;i<=n;i++) 
+        {
+             if(ans[i]==1 && (i%7!=0 && i%7!=6))
+             count++;
+        }
+
+        cout<<count<<endl;
+    }
+    return 0;
+}
