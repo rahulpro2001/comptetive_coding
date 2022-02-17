@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int temp =n;
+        int s=0;
+        int cr=0;
+        while(temp)
+        {
+            if(n&(1<<cr))
+            {}
+            else s+=(1<<cr);
+            cr++;temp=temp>>1;
+        }
+        cout<<s*n<<"\n";
+    }
+    return 0;
+}
